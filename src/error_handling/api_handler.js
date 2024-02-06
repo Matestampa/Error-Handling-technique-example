@@ -1,6 +1,7 @@
 
 //---------------------- HANDLER CENTRAL DE ERRORS PARA EL USER -------------------------------
 
+//actualizarlo con el refact de las apis
 async function apiError_handler(error,response){
     //hace bien la data de la reponse
     //esto va a cambiar segun la app que hagamos
@@ -63,7 +64,7 @@ class Api_Retry_Error extends Error4User{
     }
 }
 
-class Api_ServerError extends Error4User{
+class Api_Server_Error extends Error4User{
     constructor(message,data){
         super(message,data);
 
@@ -76,12 +77,12 @@ class Api_ServerError extends Error4User{
 //--------------------- OBJ CON TODOS LOS ERRORS -------------------------------------
 //------------------ PARA QUE SE MAS FACIL USARLOS E IMPORTARLOS --------------------
 
-const DFLT_API_ERRORS={
+const DFLT_API_ERRORS=Object.freeze({
     NOT_AUTH:(message,data)=>new Api_NotAuth_Error(message,data),
     BAD_REQ:(message,data)=> new Api_BadRequest_Error(message,data),
     RETRY:(message,data)=> new Api_Retry_Error(message,data),
-    SERVER: (message,data)=> new Api_ServerError(message,data),
-}
+    SERVER: (message,data)=> new Api_Server_Error(message,data),
+})
 
 
 module.exports={apiError_handler,Error4User,DFLT_API_ERRORS};
