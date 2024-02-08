@@ -13,9 +13,12 @@ async function userInfo_igRequest(){
 
     }
     
-    //Si hay errors
+    //### SI HAY ERRORS ####
     catch(e){
-      //############### los mandamos al handler de la feature ####################################
+      
+        //########### LOS MANDAMOS AL HANDLER DE LA FEATURE. #################################
+        //Este va a lanzar un error interno, que no "catcheamos" aca porque no sabemos que hacer
+        //con el. Simplemente lo dejamos que siga "hacia arriba"
         igRequest_errorHandler(e);
     }
 
@@ -23,7 +26,8 @@ async function userInfo_igRequest(){
 
 }
 
-async function followers_igRequest(){
+
+/*async function followers_igRequest(){
     
     //hacemos la request
     let data;
@@ -36,12 +40,14 @@ async function followers_igRequest(){
     //Si hay errors
     catch(e){
 
-      //########### los mandamos al handler de la feature. #################################
-        igRequest_errorHandler(e);
+      //########### LOS MANDAMOS AL HANDLER DE LA FEATURE. #################################
+      //Este va a lanzar un error interno, que no "catcheamos" aca porque no sabemos que hacer
+      //con el. Simplemente lo dejamos que siga "hacia arriba"
+      igRequest_errorHandler(e);
         
     }
 
     return {followers:data.followers,cursor:data.cursor};
-}
+}*/
 
 module.exports={userInfo_igRequest,followers_igRequest};
