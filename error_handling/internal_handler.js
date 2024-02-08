@@ -2,7 +2,8 @@
 //------------------------------- HANDLER CENTRAL DE ERRORES INTERNOS -------------------------
 
 async function internalError_handler(error){
-    //Lo logea
+    
+  //Lo logea en donde sea. (esto depende de cada caso)
     console.log(`${error} DESDE EL INTERNAL HANDLER`);
 
     //Si es critico, tira abajo el server o las requests.

@@ -10,9 +10,8 @@ const {BannedIgAccount_Error,NotAuthIgAccount_Error,
        UnknownIgRequest_Error}=require("./feature/error_handler.js");
 
 
-//##### HANDLER PARA ERRORS INTERNOS ######
+//##### HANDLER CENTRAL DE ERRORS INTERNOS ######
 const {internalError_handler}=require("../../error_handling/index.js");
-
 
 
 
@@ -40,7 +39,7 @@ async function error_handler(error,AccountsManager,account_key){
         internalError_handler(error)
         
         //Devolvemos el error para el user
-        throw DFLT_API_ERRORS.RETRY();
+        return DFLT_API_ERRORS.RETRY();
     }
 
     if (error instanceof NotAuthIgAccount_Error){
@@ -55,7 +54,7 @@ async function error_handler(error,AccountsManager,account_key){
         internalError_handler(error);
         
         //Devolvemos el error para el user
-        throw DFLT_API_ERRORS.RETRY();
+        return DFLT_API_ERRORS.RETRY();
     }
 
     if (error instanceof UnknownIgRequest_Error){
@@ -70,11 +69,10 @@ async function error_handler(error,AccountsManager,account_key){
         internalError_handler(error);
 
         //Devolvemos el error para el user
-        throw DFLT_API_ERRORS.SERVER();
+        return DFLT_API_ERRORS.SERVER();
     }
 
 }
-
 
 
 
