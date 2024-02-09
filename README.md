@@ -1,3 +1,5 @@
+ Este codigo es un complemento de la tecnica completa en este doc: (PONER DOC DE LA PAG)
+
 En este ejemplo solo vamos a contemplar elementos del proyecto como los controllers, los servicios, y la carpeta de error_handling. Se
 van a dejar de lado las rutas, los middlewares y la configuraciones de la app, para que sea mas claro. 
 Dicho esto se va a partir de que el controller recibe una request y de ahi en adelante sigue el flujo del codigo.
