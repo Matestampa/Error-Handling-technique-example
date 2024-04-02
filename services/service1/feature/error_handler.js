@@ -1,5 +1,5 @@
 
-//#### IMNPORTAR CLASE BASE DE ERRORS INTERNOS, PARA CONSTRUIR LOS DEMAS ###############
+//#### IMPORTAR CLASE BASE DE ERRORS INTERNOS, PARA CONSTRUIR LOS DEMAS ###############
 const {InternalError}=require("../../../error_handling");
 
 
@@ -7,7 +7,8 @@ const {InternalError}=require("../../../error_handling");
 
 //-------------------------- ERROR HANDLER DE LA FEATURE -----------------------------
 //Este toma excepciones "directas de la falla", y los transforma en excepciones
-//que nuestro codigo puede entender mas facil. Estos errors que lanzen son todos internos
+//que nuestro codigo puede entender mas facil.
+//( Estos errors que lanzen son todos internos )
 
 function igRequest_errorHandler(error){
     let message=error.message;

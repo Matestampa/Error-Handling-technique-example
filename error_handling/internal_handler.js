@@ -25,6 +25,6 @@ class InternalError extends Error{
     }
 }
 
-//las implementaciones quedan a cargo de los servicios
+//Las implementaciones quedan a cargo de los servicios
 
 module.exports={internalError_handler,InternalError};

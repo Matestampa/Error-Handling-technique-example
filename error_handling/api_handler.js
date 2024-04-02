@@ -1,14 +1,13 @@
 
 //---------------------- HANDLER CENTRAL DE ERRORS PARA EL USER -------------------------------
 
-//actualizarlo con el refact de las apis
 async function apiError_handler(error,response){
-    //hace bien la data de la reponse
-    //esto va a cambiar segun la app que hagamos
-
+    
+    //Ordenar bien la data de la response
+    //(esto va a cambiar segun cada app)
     let response_message=error.message? error.message: error.default_message;
 
-    //se la manda al user
+    //Se la manda al user
     response.status(error.status_code).json({
         status:error.status_code,
         error:{

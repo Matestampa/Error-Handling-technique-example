@@ -22,8 +22,10 @@ const {internalError_handler}=require("../../error_handling/index.js");
 //la logica posterior necesaria de c/u.
 
 //En este caso aparte del error, toma como params 2 cosas que
-//considera necesarias para hacer su logica, o para agregarle info al error, cuando ocurre alguno.
-//(el handler de cada servico puede manejar esto como quiera)
+//considera necesarias para hacer su logica, o para agregarle info al error, 
+//cuando ocurre alguno.
+//(El handler de cada servico puede manejar esto como quiera)
+
 
 async function error_handler(error,AccountsManager,account_key){
      
